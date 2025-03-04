@@ -52,6 +52,11 @@ switch ($auth_type) {
             redirect("auth.php?type=$auth_type");
         }
 
+        if (empty($password)) {
+            $_SESSION['error'] = 'Please provide your password.';
+            redirect("auth.php?type=$auth_type");
+        }
+
         // Check if user already exists
         $user = get_user_by_email($email);
 
@@ -60,7 +65,7 @@ switch ($auth_type) {
             $user_id = $user['id'];
         } else {
             // Create new user
-            $user_id = create_user($auth_type, $email, $full_name);
+            $user_id = create_user($auth_type, $email, $full_name, $password);
 
             if (!$user_id) {
                 $_SESSION['error'] = 'Failed to create account. Please try again.';
