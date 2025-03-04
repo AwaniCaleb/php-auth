@@ -36,7 +36,7 @@ $auth_type = $_SESSION['auth_type'];
     <div class="container">
         <header>
             <div class="logo">
-                <img src="assets/images/logo.png" alt="Logo">
+                <!-- <img src="assets/images/logo.png" alt="Logo"> -->
                 <h1><?php echo SITE_NAME; ?></h1>
             </div>
         </header>
