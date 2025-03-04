@@ -1,0 +1,80 @@
+# Environment Configuration
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+config.php
+
+# Database credentials and configuration
+includes/config.php
+includes/db.php
+
+# Generated files
+/vendor/
+/node_modules/
+/dist/
+/build/
+
+# Dependency directories
+/bower_components/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Cache directories
+.sass-cache/
+.cache/
+.tmp/
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages and archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated files
+ehthumbs.db
+desktop.ini
+
+# Local development server files
+.phpunit.result.cache
+phpunit.xml
+
+# Composer
+composer.phar
+/vendor/
+
+# Local configuration
+/config.local.php
