@@ -16,8 +16,8 @@ PHP Auth is a simple yet comprehensive web application that implements various a
 
 - Clean, responsive landing page
 - Multiple authentication options:
-  - Sign in with Google
-  - Sign in with Apple
+  - Sign in with Google (Not OAuth)
+  - Sign in with Apple (Not API)
   - Email-based authentication
 - Secure data handling
 - Form validation
@@ -33,12 +33,6 @@ root/
 │   │   └── style.css
 │   ├── js/
 │   │   └── script.js
-│   └── images/
-│       ├── logo.png
-│       └── icons/
-│           ├── google.png
-│           ├── apple.png
-│           └── email.png
 ├── includes/
 │   ├── config.php
 │   ├── db.php
@@ -69,15 +63,14 @@ To configure the application:
 
 1. Update database credentials in `includes/config.php`
 2. Configure email settings for form submissions (if using email logging)
-3. Set up OAuth credentials for social login providers
+<!-- 3. Set up OAuth credentials for social login providers -->
 
 ## Deployment
 
-This project is configured for easy deployment to Vercel:
-
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables in the Vercel dashboard
-3. Deploy
+This project is configured for easy deployment. I used [Infinity Free](https://infinityfree.com/) to deploy and it simple and easy.
+1. Configure environment variables
+2. Copy files and folder from project root to your htdocs in your hosting provider's file manager
+3. Done!
 
 ## Technologies Used
 
@@ -85,7 +78,6 @@ This project is configured for easy deployment to Vercel:
 - JavaScript
 - PHP
 - MySQL
-- OAuth 2.0 for social login
 
 ## Future Improvements
 
