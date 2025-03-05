@@ -107,6 +107,23 @@ function get_user_by_email($email)
 }
 
 /**
+ * Get all users
+ *
+ * @return array|bool User data if exists, false otherwise
+ */
+function get_users()
+{
+    $sql = "SELECT * FROM users";
+    $result = db_query($sql);
+
+    if ($result && count($result) > 0) {
+        return $result;
+    }
+
+    return [];
+}
+
+/**
  * Log a login attempt in the database
  *
  * @param int|null $user_id The user ID (null if user doesn't exist)
@@ -141,6 +158,7 @@ function create_user_session($user)
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['user_email'] = $user['email'];
     $_SESSION['user_name'] = $user['full_name'];
+    $_SESSION['user_type'] = $user['user_type'];
     $_SESSION['logged_in'] = true;
     $_SESSION['auth_type'] = $user['auth_type'];
 }

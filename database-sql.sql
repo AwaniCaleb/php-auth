@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) NOT NULL,
     full_name VARCHAR(255),
     password VARCHAR(255),           -- Will be hashed if direct login
+    user_type ENUM('admin', 'user') DEFAULT 'user'
     profile_image VARCHAR(255),      -- URL to profile image
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -25,3 +26,6 @@ CREATE TABLE IF NOT EXISTS login_attempts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 );
+
+-- Insert sample data into users table
+INSERT INTO users (auth_type, email, full_name, user_type) VALUES ('email', 'admin@example.com', 'Admin Istrator', 'admin');
